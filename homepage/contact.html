@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Will's Contact</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            // Run script once DOM is loaded
+             document.addEventListener("DOMContentLoaded", function() {
+
+                 // Check no spam check for email
+                 document.querySelector("#email").addEventListener("click", function() {
+                     let spam = document.querySelector("#spam:checked");
+                     if (spam === null) {
+                         alert("Please confirm you will not send spam!");
+                     } else {
+                         document.querySelector("#email-response").innerHTML = "<b>Heres my email:</b> Will@slamped.com";
+                     }
+                     console.log(spam);
+                 });
+             });
+
+        </script>
+
+    </head>
+    <body>
+    <!--Navbar from the following https://getbootstrap.com/docs/4.3/components/navbar/#supported-content-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" id="title" href="index.html">Will's Homepage</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hobbies.html">Hobbies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <!--Content Here-->
+    <div class="container content">
+      <div class="row">
+        <div class="col-sm">
+            <h3 id="page-heading">Contact Details</h3>
+            <p>Please answer the following questions to get my contact details.</p>
+            <div class="form">
+                <form>
+                    <input type="checkbox" id="spam" name="spam" value="yes">
+                    <label for="spam"> I will not send spam</label><br>
+                </form>
+                
+            </div><br>
+            <button  type="submit" id="email">Get Email</button>
+            <p id="email-response"></p>
+        </div>
+      </div>
+    </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,67 @@
+{% extends "recipes.html" %}
+
+{% block recipe_value %}
+value="{{ recipe.name }}"
+{% endblock %}
+
+{% block delete_recipe %}
+    <div class="form-group pb-3">
+      <input type="hidden" name="type" value="recipe">
+      <button type="submit" formaction="/delete" class="btn btn-danger">Delete</button>
+    </div>
+{% endblock %}
+
+{% block recipe %}
+    <div id="recipe" class="pb-3">
+      <div class="card text-center">
+        <div class="card-header">
+          Recipe
+        </div>
+        <div class="card-body">
+          {% if not recipe.link %}
+          <h5 class="card-title">{{ recipe.name }}</h5>
+          {% else %}
+          <a href="https://{{ recipe.link }}"><h5 class="card-title">{{ recipe.name }}</h5></a>
+          {% endif %}
+          <p class="card-text"><strong>Ingredients</strong></p>
+          <table class="table table-hover table-sm">
+              <tr>
+                  <th>Item</th>
+                  <th>Quantity</th>
+              </tr>
+              {% for ingredients in recipe.ingredients %}
+              <tr>
+                  <td>{{ ingredients.ingredient.item }}</td>
+                  <td>{{ ingredients.quantity }} {{ ingredients.ingredient.unit  }}</td>
+              </tr>
+              {% endfor %}
+          </table>
+        </div>
+        <div class="card-footer text-muted">
+          {% if recipe.generatedCount == none %}
+            Generated Count: Never
+          {% else %}
+            Generated Count: {{ recipe.generatedCount }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div>
+        <p><strong>Add & Delete ingredients below!</strong></p>
+        <form id="ingredient_form" action="/edit" method="post">
+        <div class="form-group pb-3">
+            <input type="hidden" id="recipe" name="recipe" value="{{ recipe.name }}">
+            <input class="form-control" list="ingredients" {% block ingredient_value %}{% endblock %} name="ingredient_selection" onfocus="this.value=''" onchange="ingredientList(this.value)" placeholder="Add, update or delete" autocomplete="off">
+            <datalist id="ingredients">
+                <option value="Add">
+                {% for ingredients in recipe.ingredients %}
+                    <option value="{{ ingredients.ingredient.item }}">
+                {% endfor %}
+            </datalist>
+        </div>
+        {% block edit_ingredient %}{% endblock %}
+        </form>
+    </div>
+
+{% endblock %}

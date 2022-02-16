@@ -1,0 +1,14 @@
+{% extends "edit.html" %}
+
+{% block ingredient_value %}
+value="{{ ingredient_selection }}"
+{% endblock %}
+
+{% block edit_ingredient %}
+    <div class="form-group pb-3">
+      <input type="hidden" name="recipe" value="{{ recipe.id }}">
+      <input type="hidden" name="type" value="ingredient">
+      <button type="submit" formaction="/delete" class="btn btn-danger">Delete</button>
+    </div>
+{% endblock %}
+

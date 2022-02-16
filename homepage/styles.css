@@ -1,0 +1,72 @@
+#title {
+    color: tomato;
+}
+
+.content{
+    color: black;
+    text-align: center;
+    
+}
+
+#page-heading {
+    margin-top: 20px;
+}
+
+img {
+    margin-bottom: 16px;
+}
+
+.center {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: tomato;
+}
+
+a:hover {
+  color: black;
+}
+
+th, td {
+    padding: 5px;
+    border: 1px solid #787878;
+}
+
+th {
+    background-color: #b4b4b4;
+}
+
+td {
+    background-color: #f0f0f0;
+}
+
+.form {
+    display: inline-block; 
+    text-align: left;
+}
+
+button {
+    background-color: tomato;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    vertical-align: middle;
+}
+
+#email-response {
+    margin-top: 10px;
+}
+
+li {
+    text-align: left;
+}
+
+button

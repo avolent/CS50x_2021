@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h4>History</h4>
+        <p>Last 5 Generated!</p>
+        {% if not history %}
+        <p>History is currently empty!</p>
+        {% else %}
+            {% for generated in history %}
+            <div class="card text-center mb-3">
+                <div class="card-body">
+                    <p><strong>Meal List</strong></p>
+                    <ul class="list-unstyled">
+                        {% for item in generated.mealList %}<li>{{ item }}</li>{% endfor %}
+                    </ul>
+                    <p><strong>Ingredient List</strong></p>
+                    <ul class="list-unstyled">
+                        {% for item in generated.ingredientList %}<li>{{ item }}</li>{% endfor %}
+                    </ul>
+                    </div>
+                <div class="card-footer text-muted">
+                    Generated on: {{ generated.generatedOn }}
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "recipes.html" %}
+
+{% block recipe_value %}
+    value="Add"
+{% endblock %}
+
+{% block recipe %}
+
+    <div>
+        <p><strong>Add a recipe below.</strong></p>
+        <form id="recipe_add" action="/add" method="post">
+          <div class="mb-3">
+            <input type="text" class="form-control" autocomplete="off" name="name" placeholder="Recipe Name" required>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" autocomplete="off" name="link" placeholder="Recipe Link">
+          </div>
+          <div class="mb-3">
+            <input type="hidden" name="type" value="recipe">
+            <button class="btn btn-outline-primary" type="submit">Add Recipe</button>
+          </div>
+        </form>
+    </div>
+
+{% endblock %}

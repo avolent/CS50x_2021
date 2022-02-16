@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Will's Projects</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+    <body>
+    <!--Navbar from the following https://getbootstrap.com/docs/4.3/components/navbar/#supported-content-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" id="title" href="index.html">Will's Homepage</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="hobbies.html">Hobbies</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <!--Content Here-->
+    <div class="container content">
+      <div class="row">
+        <div class="col-sm">
+          <h3 id="page-heading">Projects</h3>
+          <p>Most of my projects I place on my <a id="github" href="https://github.com/avolent" target="_blank">github</a>, but some I can't so here is a list of them all!</p>
+          <table class="center">
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/avolent/wifi" target="_blank">wifi.py</a></td>
+                <td>My first ever python script which can be used to map out WiFi networks, log data and troubleshoot issues. This will slowly be improved as I grow my python experience. Only supports windows at this current time.</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/avolent/sustenance" target="_blank">sustenance.py</a></td>
+                <td>A randomly selected meal plan which will output the total list of ingredients to a ifttt webhook. You can then do whatever with this data. Lots of improvements can be made to this script, it was something i made in a night.</td>
+              </tr>
+              <tr>
+                <td><a href="https://cortex.wiki/" target="_blank">cortex.wiki</a></td>
+                <td>The goal of this wiki is to be an accumulation and amalgamation of information from various different topics. Hoping that the act of writing in the wiki format improves the ability to retain and explain whatever we have learnt. Something a long the lines of the Feynman Technique - a mental model (a breakdown of his personal thought process) to convey information using concise thoughts and simple language. Contributions are done by a group of friends trying to share resources for the gain of efficiency.</td>
+              </tr>
+            </table>
+        </div>
+      </div>
+    </div>
+    </body>
+</html>

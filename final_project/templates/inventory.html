@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Inventory
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h4>Inventory!</h4>
+        <form id="item_form" action="/inventory" method="post">
+        <div class="form-group pb-3">
+            <input class="form-control" list="datalistOptions" name="item_selection" {% block inventory_value %}{% endblock %} onfocus="this.value=''" onchange="itemList(this.value)" placeholder="Add, update or delete" autocomplete="off">
+            <datalist id="datalistOptions">
+                <option value="Add">
+                {% for item in items %}
+                    <option value="{{ item.item }}">
+                {% endfor %}
+            </datalist>
+        </div>
+        {% block edit_inventory %}{% endblock %}
+        </form>
+    </div>
+    <div>
+        <p><strong>Item List</strong></p>
+        <table class="table table-striped table-hover table-sm">
+            <tr>
+                <th>Item</th>
+                <th>Unit</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.item }}</td>
+                <td>{{ item.unit }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

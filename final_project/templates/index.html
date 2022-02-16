@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h1 class="display-4">Welcome to Sustenance!</h1>
+        <h5>Where you can generate your weekly meals plans!</h5>
+    </div>
+
+    <div class="p-4">
+        <p>How Many Meals would you like to make?</p>
+        <form id="index_form" action="/" method="post">
+            <div class="form-group">
+                <label for="meals" class="form-label" id="meal-count">4 Meals</label>
+                <div>
+                    <input type="range" class="form-range" name="meal_count" min="1" max="7" step="1" id="meals" oninput="updateTextInput(this.value);">
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    {% block plan %}
+
+    {% endblock %}
+
+{% endblock %}

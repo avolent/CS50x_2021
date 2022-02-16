@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recipes
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h4>Recipes!</h4>
+        <form id="recipe_form" action="/recipes" method="post">
+            <div class="form-group pb-3">
+              <input class="form-control" list="recipe" {% block recipe_value %}{% endblock %} name="recipe_selection" onfocus="this.value=''" onchange="recipeList(this.value)" placeholder="Add, update or delete" autocomplete="off">
+              <datalist id="recipe">
+                <option value="Add">
+                {% for recipe in recipes %}
+                    <option value="{{ recipe.name }}">
+                {% endfor %}
+              </datalist>
+            </div>  
+            {% block delete_recipe %}{% endblock %}
+        </form>
+    </div>
+
+    {% block recipe %}
+
+    {% endblock %}
+
+{% endblock %}

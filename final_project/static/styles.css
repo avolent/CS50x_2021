@@ -1,0 +1,42 @@
+.navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: 50%;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+
+main .table
+{
+    margin: auto;
+    text-align: left;
+    width: auto;
+}
+
+.list-group-item
+{
+    border: 0px;
+}
+
+#meals
+{
+    width: 25%;
+}
+

@@ -1,0 +1,8 @@
+sort1 uses: Bubble
+How do you know?: Based on looking at all the times for each file. I can see that this is bubble as it is the slowest in random file but the second fastest in the sorted file.
+
+sort2 uses: Merge
+How do you know?: Based on looking at all the times for each file. I can see that this is merge because it is the fastest in random and reversed.
+
+sort3 uses: Selection
+How do you know?: Based on looking at all the times for each file. I can see that this is selection since it is not the slowest in random or reversed files.

@@ -1,0 +1,19 @@
+{% extends "inventory.html" %}
+
+{% block inventory_value %}
+value="Add"
+{% endblock %}
+
+{% block edit_inventory %}
+      <div class="mb-3">
+        <input type="text" class="form-control" name="item" placeholder="Item" autocomplete="off" required>
+      </div>
+      <div class="mb-3">
+        <input type="text" class="form-control" name="unit" placeholder="Unit of Measurement (Optional)" autocomplete="off">
+      </div>
+      <div>
+        <input type="hidden" name="type" value="item">
+        <button type="submit" formaction="/add" class="btn btn-primary">Add</button>
+      </div>
+
+{% endblock %}

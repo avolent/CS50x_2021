@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <div class="table table-striped">
+        <table>
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the database entries to display them in this table -->
+                {% for shares in stocks %}
+                    <tr>
+                        <td>{{ shares['symbol'] }}</td>
+                        <td>{{ shares['name'] }}</td>
+                        <td>{{ shares['shares'] }}</td>
+                        <td>{{ shares['price'] | usd }}</td>
+                        <td>{{ shares['total'] | usd }}</td>                      
+                    </tr>
+                {% endfor %}
+                    <tr>
+                        <td>CASH</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>{{ cash | usd }}</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
